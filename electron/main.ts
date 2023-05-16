@@ -24,7 +24,7 @@ function createWindow() {
 
     // Load the index.html of the app in the brand new Electron window
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'todo/index.html'),
         protocol: 'file:',
         slashes: true
     }))

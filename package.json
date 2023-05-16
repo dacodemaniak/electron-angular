@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "electron-build": "ng build && tsc electron/main.ts --outDir dist -t es5 && electron ./dist/main.js",
+    "electron-build-prod": "ng build --prod && tsc electron/main.ts --outDir dist -t es5 && electron ./dist/main.js"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@angular-devkit/build-angular": "~13.2.2",
     "@angular/cli": "~13.2.2",
     "@angular/compiler-cli": "~13.2.0",
+    "@types/estree": "^1.0.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "electron": "^24.3.0",
