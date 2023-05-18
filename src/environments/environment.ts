@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  apiRoot: "http://127.0.0.1:3000/"
+  apiRoot: "http://127.0.0.1:3000/",
+  localDB: {
+    name: "Todo",
+    version: 1
+  }
 };
 
 /*
