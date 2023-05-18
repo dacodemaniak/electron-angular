@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '@services/todo.service';
+import { TodoService } from '@services/todo-impl.service';
 import { take } from 'rxjs/operators';
 import { TodoType } from './core/types/todo-type';
 
