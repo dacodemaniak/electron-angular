@@ -42,11 +42,6 @@ export class TodoImplService implements TodoService {
       id = datas as number
     }
 
-    return this._dbService.delete('todo', id)
-      .pipe(
-        map((todos: Array<unknown>) => {
-          return id
-        })
-      )
+    return this._dbService.deleteByKey('todo', id)
   }
 }
