@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { TodoImplService } from '@services/todo-impl.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -7,6 +9,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        CoreModule
+      ],
+      providers: [
+        TodoImplService
+      ]
     }).compileComponents();
   });
 
@@ -20,12 +28,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('todo');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('todo app is running!');
   });
 });

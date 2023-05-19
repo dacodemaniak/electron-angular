@@ -37,7 +37,7 @@ export class TodoImplService implements TodoService {
     let id: number
 
     if (datas.hasOwnProperty('id')) {
-      id = (datas as TodoType).id
+      id = (datas as TodoType).id!
     } else {
       id = datas as number
     }
