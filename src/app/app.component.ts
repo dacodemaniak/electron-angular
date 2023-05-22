@@ -16,7 +16,9 @@ export class AppComponent implements OnInit {
     private _todoService: TodoImplService
   ) {}
 
+
   ngOnInit(): void {
+    this._populate()
 
       this._todoService.findAll()
       .pipe(
@@ -25,9 +27,22 @@ export class AppComponent implements OnInit {
       .subscribe((todos: Array<TodoType>) => {
         this.todos = todos;
       })
-
-
   }
 
-  
+  private _populate(): void {
+    const todo: TodoType = {
+      title: 'Test indexedDB',
+      createdAt: new Date('2023-05-19T10:39:43.511Z'),
+      done: false
+    }
+
+    this._todoService.add(todo)
+      .pipe(
+        take(1)
+      )
+      .subscribe((todo: any) => {
+        console.log(JSON.stringify(todo))
+      })
+  }
+
 }

@@ -11,6 +11,11 @@ import { TodoService } from './todo-service';
 })
 export class TodoImplService implements TodoService {
 
+  /**
+   * Inject NgxIndexedDBService
+   *
+   * @param _dbService NgxIndexedDBService
+   */
   constructor(
     private _dbService: NgxIndexedDBService
   ) {}
@@ -29,6 +34,7 @@ export class TodoImplService implements TodoService {
       datas
     )
   }
+
   update(datas: TodoType): Observable<any> {
     return this._dbService.update('todo', datas)
   }
